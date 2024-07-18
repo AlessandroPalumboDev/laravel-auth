@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +25,12 @@ Route::middleware('auth', 'verified')
 ->name('admin.') //aggiunge un prefisso al name delle rotte nel gruppo
 ->prefix('admin') // aggiunge un prefisso agli url delle rotte nel gruppo
 ->group(function () {
+
     //  -> /admin
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    //projects
+    Route::resource('projects', ProjectController::class);
 
 });
 
