@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//gruppo rotte
+Route::middleware('auth', 'verified')
+->name('admin.') //aggiunge un prefisso al name delle rotte nel gruppo
+->prefix('admin') // aggiunge un prefisso agli url delle rotte nel gruppo
+->group(function () {
+    //  -> /admin
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
