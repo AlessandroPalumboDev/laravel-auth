@@ -11,7 +11,7 @@ class UpdateProjectRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,19 @@ class UpdateProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:50',
+            'description' => 'string|max:500',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Il nome del progetto è obbligatorio!',
+            'name.max' => 'Il nome del progetto non può contenere più di 50 caratteri',
+            'description.max' => 'La descrizione del progetto non può contenere più di 500 caratteri'
+
         ];
     }
 }
+
