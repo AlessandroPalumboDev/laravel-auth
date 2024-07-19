@@ -29,7 +29,7 @@ Route::middleware('auth', 'verified')
     //  -> /admin
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    //projects
+    //  -> /adimin/projects
     Route::resource('projects', ProjectController::class);
 
 });
