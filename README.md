@@ -1,16 +1,53 @@
-# Laravel Auth Template
+# Laravel Boolfolio - Base
+
+## Prima parte
+
+```txt
+Creiamo con Laravel il nostro sistema di gestione del nostro Portfolio di progetti.
+Oggi iniziamo un nuovo progetto che si arricchirà nel corso delle prossime lezioni: man mano aggiungeremo funzionalità e vedremo la nostra applicazione crescere ed evolvere.
+Nel pomeriggio, rifate ciò che abbiamo visto insieme stamattina stilando tutto a vostro piacere utilizzando SASS.
+```
+
+### Descrizione:
+
+-   Ripercorriamo gli steps fatti a lezione ed iniziamo un nuovo progetto usando laravel breeze per utilizzare il sistema di autenticazione.
+-   Trovate sulla mia repo github il progetto con tutte le indicazioni per creare un vostro template, partendo da un progetto laravel 10 pulito:
+-   Seguite le istruzioni del README:
+    https://github.com/taniot/laravel-auth-classe126
+-   Iniziamo con il definire il layout, modello, migrazione, controller e rotte necessarie per il sistema portfolio:
+
+        1. Autenticazione: si parte con l'autenticazione e la creazione di un layout per back-office
+        2. Creazione del modello Project con relativa migrazione, seeder, controller e rotte
+
+-   Bonus
+    -   Per la parte di back-office creiamo un resource controller Admin\ProjectController per gestire tutte le operazioni CRUD dei progetti
+    -   Implementiamo la validazione dei dati dei Progetti nelle operazioni CRUD che lo richiedono usando due form requests.
+
+## Seconda parte
+
+```txt
+Continuate con l'esercitazione cominciata ieri - stessa repository e portate a conclusione le CRUD per la gestione dei progetti.
+```
+
+-   Bonus:
+    -   Provate a modificare il comportamento di default di laravel creando un campo SLUG per ogni progetto e riferendovi a quello per le operazioni di EDIT, SHOW, CREATE, DELETE;
+    -   Create una versione pubblica dei vostri progetti creando un controller Guest\ProjectController
+
+# Template di partenza
+
+## Laravel Auth Template
 
 ```
 composer create-project laravel/laravel:^10.0 nomeprogetto
 ```
 
-# Installazione breeze
+## Installazione breeze
 
 ```
 composer require laravel/breeze --dev
 ```
 
-# Scaffold dell'autenticazione breeze/blade
+## Scaffold dell'autenticazione breeze/blade
 
 ```
 php artisan breeze:install
@@ -20,7 +57,7 @@ php artisan breeze:install
 -   Would you like dark mode support? Yes
 -   Which testing framework do you prefer? PHPUnit
 
-## Eseguire i passaggi per installare bootstrap invece di tailwind
+### Eseguire i passaggi per installare bootstrap invece di tailwind
 
 ```
 npm remove postcss
@@ -48,7 +85,7 @@ ed il file app.css in app.scss
 mv resources/scss/app.css  resources/scss/app.scss
 ```
 
-## Nel file app.scss
+### Nel file app.scss
 
 Cancelliamo gli import di tailwind dal file app.scss e inseriamo:
 
@@ -56,7 +93,7 @@ Cancelliamo gli import di tailwind dal file app.scss e inseriamo:
 @import "~bootstrap/scss/bootstrap";
 ```
 
-## Nel file vite.config.js
+### Nel file vite.config.js
 
 -   modifichiamo il percorso del css
 -   aggiungiamo un alias per resources e per il bootstrap
@@ -72,7 +109,7 @@ resolve: {
     },
 ```
 
-## Nel file app.js
+### Nel file app.js
 
 -   togliere il codice che imposta alpine, lasciando solo la prima riga
 -   importare app.css, bootstrap e img
@@ -85,11 +122,11 @@ import.meta.glob([
 ])
 ```
 
-## Inserire le views con bootstrap
+### Inserire le views con bootstrap
 
 Cancellare tutti i file di default dalla cartella views e inserire i file presenti in questa repo
 
-## Partenza
+### Partenza
 
 1. installare le dipendenze di npm e composer
 2. inserire dati nel file .env
