@@ -51,11 +51,16 @@
                             <li class="nav-item">
                                 <a class="nav-link  text-light" href="{{ url('/') }}">{{ __('Home') }}</a>
                             </li>
-                            @auth
+                            {{-- @auth
                             <li class="nav-item">
-                                <a class="nav-link  text-light" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
+                                <a class="nav-link text-light" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
                             </li>
-                            @endauth
+                            @endauth --}}
+
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="{{ route('guest.projects.index ' )}} @auth {{ route('admin.projects.index' )}} @endauth">{{ __('Projects') }}</a>
+                            </li>
                         </ul>
     
                         <!-- Right Side Of Navbar -->
