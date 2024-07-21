@@ -4,7 +4,7 @@
 @section("content")
     <div class="container mt-3 text-light">
         <div class="row">
-            <div class="col">
+            <div class="col mt-3">
                 <h1 class="text-center">Lista Progetti vista da: {{ Auth::user()->name }}</h1>
             </div>
         </div>
