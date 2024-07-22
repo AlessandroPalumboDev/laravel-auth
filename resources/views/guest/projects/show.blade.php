@@ -16,7 +16,7 @@
                     </p>
 
                     <div class="d-flex justify-content-between align-items-center mt-5">
-                        <a href="{{ route("guest.projects.index") }}" class="btn btn-outline-secondary">
+                        <a href="{{ route("projects") }}" class="btn btn-outline-secondary">
                             <i class="fas fa-arrow-left"></i>
                             Torna alla lista Progetti
                         </a>

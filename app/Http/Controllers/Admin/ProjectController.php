@@ -84,6 +84,6 @@ class ProjectController extends Controller
     {
         $project = Project::findOrFail($id);
         $project->delete();
-        return redirect()->route('projects.index');
+        return redirect()->route('admin.projects.index')->with('message', $project->id . 'Progeto cancellato correttamente');
     }
 }

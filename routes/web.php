@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
-use App\Http\Controllers\Guest\ProjectController as GuestProgectController;
+use App\Http\Controllers\Guest\ProjectController as GuestProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +22,8 @@ Route::get('/', function () {
 });
 
 // rotte pubbliche
-Route::get('/projects', [GuestProjectController::class, 'index']);
+Route::get('/projects', [GuestProjectController::class, 'index'])->name('projects');
+Route::get('/projects/{project:id}', [GuestProjectController::class, 'show'])->name('projects.show');
 
 
 

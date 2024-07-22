@@ -9,6 +9,19 @@
 
 body {
     background-color: rgb(0, 0, 0);
+
+    main {
+        padding-bottom: 50px;
+
+        .guest-card {
+            height: 400px;
+
+            .btn {
+                position: absolute;
+                bottom: 5px;
+            }
+        }
+    }
 }
 ::selection {
     background-color: black;

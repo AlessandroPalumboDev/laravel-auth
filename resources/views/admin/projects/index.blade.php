@@ -10,11 +10,11 @@
         </div>
         <div class="row">
             <div class="col">
-                <a href="{{ route('admin.projects.create') }}" class="btn btn-dark btn-sm mt-5 mb-3">
+                <a href="{{ route('admin.projects.create') }}" class="btn btn-outline-secondary btn-sm mt-5 mb-3">
                     <i class="far fa-plus"></i>
                 Aggiungi nuovo progetto
                 </a>
-            <ul class="list-group bg-dark">
+            <ul class="list-group bg-dark ">
                 @foreach ($projects as $project)
                     <li class="list-group-item d-flex justify-content-between align-items-center bg-dark text-light">
                         <div>
